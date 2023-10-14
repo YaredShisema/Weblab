@@ -1,0 +1,11 @@
+When you type a URL into your browser and press enter, the browser initiates a series of steps to load the web page. The first step is to check the browser's cache to see if the website was previously visited and if the IP address is known. If the IP address is not found in the cache, the browser asks the operating system to locate the website.
+
+The operating system first checks the hosts file, which is a local file that maps hostnames to IP addresses. In Linux and Mac systems, the hosts file is located at /etc/hosts, while in Windows, it is located at c:\windows\system32\drivers\etc\hosts. If the URL is not found in the hosts file, the operating system proceeds to make a DNS (Domain Name System) request to find the IP address of the web page.
+
+The DNS resolution process starts with the resolver, which is typically provided by your Internet Service Provider (ISP). The resolver first checks its cache to see if it knows the IP address for the requested URL. If the resolver doesn't have the IP address, it sends a request to the root server associated with the top-level domain (TLD) of the URL. For example, if the URL ends in .com, the resolver contacts the .com TLD server.
+
+The TLD server also checks its cache to see if it has the requested IP address. If not, it provides the resolver with at least one authoritative name server associated with the URL. The resolver then contacts the authoritative name server to obtain the IP address.
+
+After the DNS resolution process, the IP address associated with the URL is returned to the browser. All these steps, from cache lookup to DNS resolution, typically occur within milliseconds, allowing the browser to quickly obtain the IP address and proceed with loading the web page.
+
+It's important to note that this paragraph provides a simplified overview of the DNS resolution process and may vary depending on the specific configurations and network setups.
